@@ -39,13 +39,20 @@ export async function POST(request) {
     await writeFile(path, buffer);
     const imgUrl = `/${timestamp}_${image.name}`;
 
+    const author_img=formData.get('author_img');
+    const author_imgByteData = await author_img.arrayBuffer();
+    const authBuffer = Buffer.from(author_imgByteData);
+    const authPath = `./public/${timestamp}_${author_img.name}`;
+    await writeFile(authPath, authBuffer);
+    const authImgUrl = `/${timestamp}_${author_img.name}`;
+
     const blogData = {
         title: `${formData.get('title')}`,
         description: `${formData.get('description')}`,
         category: `${formData.get('category')}`,
         author: `${formData.get('author')}`,
         image: `${imgUrl}`,
-        author_img: `${formData.get('author_img')}`
+        author_img: `${authImgUrl}`
     }
 
     await BlogModel.create(blogData);
@@ -63,6 +70,7 @@ export async function POST(request) {
         const id = await request.nextUrl.searchParams.get('id');
         const blog = await BlogModel.findById(id);
         fs.unlink(`./public${blog.image}`,()=>{});
+        fs.unlink(`./public${blog.author_img}`,()=>{});
         await BlogModel.findByIdAndDelete(id);
         return NextResponse.json({msg:"Blog Deleted"});
     }
