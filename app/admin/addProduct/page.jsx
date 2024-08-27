@@ -53,12 +53,12 @@ const page = () => {
     <>
       <form
         onSubmit={onSubmitHandler}
-        className="pt-5 px-5 pb-4 sm:pt-12 sm:pl-16"
+        className="pt-5 px-5 pb-10 sm:pt-12 sm:pl-16 shadow-[1px_1px_10px_#AEB6B7] p-4 rounded-md mt-5 mb-10"
       >
-        <p className="text-xl">Upload Thumbnail</p>
+        <p className="text-base">Thumbnail</p>
         <label htmlFor="image">
           <Image
-            className="mt-4 cursor-pointer"
+            className="mt-2 cursor-pointer"
             src={!image ? assets.upload_area : URL.createObjectURL(image)}
             width={140}
             height={70}
@@ -77,7 +77,7 @@ const page = () => {
 
         {/* Author image upload  */}
 
-        <p className="text-xl">Author Image</p>
+        <p className="text-base">Author Image</p>
         <label htmlFor="author_img">
           <Image
             className="mt-2 rounded-full cursor-pointer"
@@ -97,46 +97,46 @@ const page = () => {
           required
         />
 
-        <p className="text-xl mt-4">Author</p>
+        <p className="text-base mt-4">Author</p>
         <input
           name="author"
           onChange={onChangeHandler}
           value={data.author}
-          className="w-full sm:w-[500px] mt-4 px-4 py-3 border"
+          className="w-full sm:w-[500px] mt-2 px-4 py-3 border"
           type="text"
           placeholder="Author name"
           required
         />
 
-        <p className="text-xl mt-4">Blog Title</p>
+        <p className="text-base mt-4">Blog Title</p>
         <input
           name="title"
           onChange={onChangeHandler}
           value={data.title}
-          className="w-full sm:w-[500px] mt-4 px-4 py-3 border"
+          className="w-full sm:w-[500px] mt-2 px-4 py-3 border"
           type="text"
           placeholder="Type here"
           required
         />
 
-        <p className="text-xl mt-4">Blog Description</p>
+        <p className="text-base mt-4">Blog Description</p>
         <textarea
           name="description"
           onChange={onChangeHandler}
           value={data.description}
-          className="w-full sm:w-[500px] mt-4 px-4 py-3 border"
+          className="w-full sm:w-[500px] mt-2 px-4 py-3 border"
           type="text"
           placeholder="Write content here"
           rows={6}
           required
         />
 
-        <p className="text-xl mt-4">Blog Category</p>
+        <p className="text-base mt-4">Blog Category</p>
         <select
           name="category"
           onChange={onChangeHandler}
           value={data.category}
-          className="w-40 mt-4 px-4 py-3 border text-grey-500 cursor-pointer"
+          className="w-40 mt-2 px-4 py-3 border text-grey-500 cursor-pointer"
         >
           <option className="cursor-pointer" value="Startup">Startup</option>
           <option className="cursor-pointer" value="Technology">Technology</option>

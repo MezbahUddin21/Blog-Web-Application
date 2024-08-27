@@ -6,7 +6,7 @@ const SubsTableItem = ({email,mongoId,date, deleteEmail}) => {
 
 
   return (
-    <tr className="bg-white border-b text-left">
+    <tr className="bg-slate-50 border-b text-left">
         <th scope="row" className="px-6 py-4 text-gray-900 font-medium whitespace-nowrap">
             {email?email:"No Email"}
         </th>
@@ -14,7 +14,7 @@ const SubsTableItem = ({email,mongoId,date, deleteEmail}) => {
         <td className="px-6 py-4 hidden sm:block">
             {emailDate.toDateString()}
         </td>
-        <td className="px-6 py-4 cursor-pointer" onClick={()=>deleteEmail(mongoId)}>
+        <td className="px-6 py-4 cursor-pointer text-red-800 text-lg" onClick={()=>deleteEmail(mongoId)}>
             x
         </td>
 

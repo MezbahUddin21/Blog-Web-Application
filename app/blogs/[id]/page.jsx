@@ -26,14 +26,15 @@ const page = ({params}) => {
 
 
   return ( data?<>
-    <div className="bg-gray-200 py-5 px-5 md:px-12 lg:px-28">
-        <div className="flex justify-between items-center">
-            <Link href='/'>
-                <Image src={assets.logo} width={180} alt="" className="w-[130px] sm:w-auto"/>
-            </Link>
-            <button className="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-black shadow-[-7px_7px_0px_#000000]">Get Start <Image className="mx-2" src={assets.arrow} alt=""/></button>
+    <div className="pt-10 px-5 md:px-12 lg:px-28">
+        <div className="flex justify-between items-center shadow-[1px_1px_10px_#AEB6B7] p-4 rounded-md">
+          <Link href={"/"}>
+            <Image src={assets.logo} width={180} alt='' className="w-[130] sm:w-auto" />
+          </Link>
+            <button className="flex items-center gap-2 mr-4 font-medium py-1 px-3 sm:py-3 sm:px-6 rounded-md bg-white hover:bg-slate-200">Get Start <Image width={15} src={assets.arrow} alt=''/> </button>
         </div>
-        <div className="text-center my-24">
+
+        <div className="text-center mt-24 mb-10">
             <h1 className="text-2xl sm:text-5xl font-semibold max-w-[700px] mx-auto ">{data.title}</h1>
             <div className="flex justify-center items-center">
                 <Image className="  max-auto mt-6 border border-white rounded-full" src={data.author_img} width={60} height={60} alt=""/>
@@ -42,14 +43,15 @@ const page = ({params}) => {
         </div>
     </div>
 
-    <div className="mx-5 max-w-[800px] md:mx-auto mt-[-100px] mb-10">
-        <Image className="border-4 border-white" src={data.image} width={1280} height={720} alt=""/>
+
+    <div className="mx-5 max-w-[1000px] md:m-auto  bg-whiterelative bg-white p-7">
+        <Image className="border-4 border-white " src={data.image} width={1280} height={720} alt=""/>
         
-        <div className="blog-content" dangerouslySetInnerHTML={{__html:data.description}}>
+        <div className="blog-content pt-5" dangerouslySetInnerHTML={{__html:data.description}}>
 
         </div>
 
-        <div className="my-24">
+        <div className="py-24">
             <p className="text-black font font-semibold my-4">Share this article on social media</p>
             <div className="flex">
                 <Image src={assets.facebook_icon} width={50} alt= ""/>

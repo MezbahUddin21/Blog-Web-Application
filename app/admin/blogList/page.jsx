@@ -29,22 +29,22 @@ const page = () => {
   },[]);
 
   return (
-    <div className="flex-1 pt-5 px-5 sm:pt-12 sm:pl-16">
-      <h1>All Blogs</h1>
-      <div className="relative h-[80vh] max-w-[850px] overflow-x-auto mt-4 border border-gray-400 scrollbar-hide">
-        <table className="w-full text-sm text-gray-500">
-          <thead className="text-sm text-gray-700 text-left uppercase bg-gray-50">
+    <div className="flex-1 pt-5  pr-10 sm:pt-12 sm:pl-16 shadow-[1px_1px_10px_#AEB6B7] p-4 rounded-md mt-5 mb-10">
+      <h1 className="text font-bold text-slate-700">Blog List</h1>
+      <div className="h-[80vh] max-w-[850px] overflow-x-auto mt-4 scrollbar-hide">
+        <table className="w-full text-sm text-gray-500 ">
+          <thead className="text-sm text-gray-700 text-left uppercase bg-white border-y">
             <tr>
-              <th scope="col" className="hidden sm:block px-6 py-3">
+              <th scope="col" className="px-6 py-4 ">
                 Author name
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-4">
                 Blog Title
               </th>
-              <th scope="col" className="px-6 py-3">
-                Blog Date
+              <th scope="col" className="px-6 py-4">
+                Date
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-4">
                 Action
               </th>
             </tr>
