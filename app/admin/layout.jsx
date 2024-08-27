@@ -5,15 +5,17 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Layout({ children }) {
+
+
   return (
     <>
-      <div className="flex">
+      <div className="sm:block md:flex lg:flex">
         <ToastContainer theme="dark"/>
         <Sidebar />
-        <div className="flex flex-col w-full">
-          <div className="flex items-center justify-between w-full py-3 max-h-[60px] px-12 border-b border-black">
-            <h3 className="font-medium">Admin Panel</h3>
-            <Image src={assets.profile_icon} width={40} alt="" />
+        <div className="flex flex-col w-full px-4">
+          <div className="flex items-center justify-between w-full py-11 max-h-[60px] px-12 mt-4 shadow-[1px_1px_10px_#AEB6B7] p-4 rounded-md">
+            <h3 className="text-xl">Admin Panel</h3>
+            <Image className="rounded-full" src={assets.profile_icon} width={45} alt="" />
           </div>
           {children}
         </div>
