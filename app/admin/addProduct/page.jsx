@@ -7,12 +7,12 @@ import { toast } from "react-toastify";
 
 const page = () => {
   const [image, setImage] = useState(false);
+  const [author_img, setAuthor_img] = useState(false);
   const [data, setData] = useState({
     title: "",
     description: "",
     category: "Startup",
-    author: "Alex Bennett",
-    author_img: "/author_img.png",
+    author: "",
   });
 
   const onChangeHandler = (event) => {
@@ -30,7 +30,7 @@ const page = () => {
     formData.append("description", data.description);
     formData.append("category", data.category);
     formData.append("author", data.author);
-    formData.append("author_img", data.author_img);
+    formData.append("author_img", author_img);
     formData.append("image", image);
 
     const response = await axios.post("/api/blog", formData);
@@ -42,8 +42,7 @@ const page = () => {
         title: "",
         description: "",
         category: "Startup",
-        author: "Alex Bennett",
-        author_img: "/author_img.png",
+        author: "",
       });
     } else {
       toast.error("Error");
@@ -59,7 +58,7 @@ const page = () => {
         <p className="text-xl">Upload Thumbnail</p>
         <label htmlFor="image">
           <Image
-            className="mt-4"
+            className="mt-4 cursor-pointer"
             src={!image ? assets.upload_area : URL.createObjectURL(image)}
             width={140}
             height={70}
@@ -71,6 +70,41 @@ const page = () => {
           type="file"
           id="image"
           hidden
+          required
+        />
+
+        <br />
+
+        {/* Author image upload  */}
+
+        <p className="text-xl">Author Image</p>
+        <label htmlFor="author_img">
+          <Image
+            className="mt-2 rounded-full cursor-pointer"
+            src={
+              !author_img ? assets.upload_auth : URL.createObjectURL(author_img)
+            }
+            width={60}
+            height={60}
+            alt=""
+          />
+        </label>
+        <input
+          onChange={(e) => setAuthor_img(e.target.files[0])}
+          type="file"
+          id="author_img"
+          hidden
+          required
+        />
+
+        <p className="text-xl mt-4">Author</p>
+        <input
+          name="author"
+          onChange={onChangeHandler}
+          value={data.author}
+          className="w-full sm:w-[500px] mt-4 px-4 py-3 border"
+          type="text"
+          placeholder="Author name"
           required
         />
 
@@ -102,12 +136,14 @@ const page = () => {
           name="category"
           onChange={onChangeHandler}
           value={data.category}
-          className="w-40 mt-4 px-4 py-3 border text-grey-500"
+          className="w-40 mt-4 px-4 py-3 border text-grey-500 cursor-pointer"
         >
-          <option value="Startup">Startup</option>
-          <option value="Technology">Technology</option>
-          <option value="Lifestyle">Lifestyle</option>
+          <option className="cursor-pointer" value="Startup">Startup</option>
+          <option className="cursor-pointer" value="Technology">Technology</option>
+          <option className="cursor-pointer" value="Lifestyle">Lifestyle</option>
+          <option className="cursor-pointer" value="Politics">Politics</option>
         </select>
+
         <br />
         <button type="submit" className="mt-8 w-40 h-12 bg-black text-white">
           ADD
