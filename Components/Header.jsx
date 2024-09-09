@@ -28,7 +28,9 @@ const Header = () => {
           <Link href={"/"}>
             <Image src={assets.logo} width={180} alt='' className="w-[130] sm:w-auto" />
           </Link>
-            <button className="flex items-center gap-2 mr-4 font-medium py-1 px-3 sm:py-3 sm:px-6 rounded-md bg-white hover:bg-slate-200">Get Start <Image width={15} src={assets.arrow} alt=''/> </button>
+          <Link href={"/register"}>
+              <button className="flex items-center gap-2 mr-4 font-medium py-1 px-3 sm:py-3 sm:px-6 rounded-md bg-white hover:bg-slate-200">Get Start <Image width={15} src={assets.arrow} alt=''/> </button>
+          </Link>
         </div>
         <br />
         <br />
