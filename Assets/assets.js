@@ -1,4 +1,3 @@
-import blog_pic_1 from './blog_pic_1.png';
 import blog_pic_2 from './blog_pic_2.png';
 import blog_pic_3 from './blog_pic_3.png';
 import blog_pic_4 from './blog_pic_4.png';
@@ -7,8 +6,6 @@ import blog_pic_6 from './blog_pic_6.png';
 import blog_pic_7 from './blog_pic_7.png';
 import blog_pic_8 from './blog_pic_8.png';
 import blog_pic_9 from './blog_pic_9.png';
-import blog_pic_10 from './blog_pic_10.png';
-import blog_pic_11 from './blog_pic_11.png';
 import blog_pic_12 from './blog_pic_12.png';
 import blog_pic_13 from './blog_pic_13.png';
 import blog_pic_14 from './blog_pic_14.png';
@@ -42,16 +39,7 @@ export const assets = {
     upload_auth
     }
 
-    export const blog_data = [{
-        id:1,
-        title:"A detailed step by step guide to manage your lifestyle",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
-        image:blog_pic_1,
-        date:Date.now(),
-        category:"Lifestyle",
-        author:"Alex Bennett",
-        author_img:profile_icon
-    },
+    export const blog_data = [
     {
         id:2,
         title:"How to create an effective startup roadmap or ideas",
@@ -127,26 +115,6 @@ export const assets = {
         title:"Achieving maximum returns with minimal resources",
         description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
         image:blog_pic_9,
-        date:Date.now(),
-        category:"Startup",
-        author:"Alex Bennett",
-        author_img:profile_icon
-    },
-    {
-        id:10,
-        title:"Beyond the Ordinary: Crafting Your Exceptional Lifestyle",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
-        image:blog_pic_10,
-        date:Date.now(),
-        category:"Lifestyle",
-        author:"Alex Bennett",
-        author_img:profile_icon
-    },
-    {
-        id:11,
-        title:"Unveiling the Secrets of Successful Startups in Technolgy",
-        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
-        image:blog_pic_11,
         date:Date.now(),
         category:"Startup",
         author:"Alex Bennett",

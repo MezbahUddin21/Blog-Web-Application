@@ -1,5 +1,5 @@
 import { ConnectDB } from "@/lib/config/db";
-import User from "@/lib/models/UserModel";
+import UserModel from "@/lib/models/UserModel";
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 
@@ -23,7 +23,7 @@ export async function POST(request) {
         password: `${hasedPassword}`
     }
 
-    await User.create(userData);
+    await UserModel.create(userData);
 
 
     return NextResponse.json({success:true, msg:"user added"});
@@ -36,7 +36,7 @@ export async function POST(request) {
 export async function GET(request){
 
 
-    const users=await User.find({});
+    const users=await UserModel.find({});
     return NextResponse.json({users});
 
 
