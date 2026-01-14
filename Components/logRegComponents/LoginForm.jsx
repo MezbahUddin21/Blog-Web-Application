@@ -39,7 +39,7 @@ const LoginForm = () => {
 
   return (
     <div className="grid place-items-center my-24">
-        <div className="shadow-lg p-5 rounded-lg border-t-4 border-green-400 sm:w-[40%] w-[80%]">
+        <div className="shadow-lg p-5 rounded-lg border-t-4 border-slate-900 sm:w-[40%] w-[80%]">
             <h1 className="text-xl font-bold my-4">Login</h1>
 
             <form className="flex flex-col gap-3" onSubmit={onSubmitHandler}>
@@ -48,7 +48,7 @@ const LoginForm = () => {
 
                 <input className="pl-4 outline-none w-[100%] rounded-md mt-5 p-5" onChange={e=> setPassword(e.target.value)}  type="password"  placeholder="Password"/>
 
-                <button className="bg-green-400 text-white font-bold cursor-pointer px-6 py-2">Login</button>
+                <button className="mt-8 flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 text-white rounded-md bg-slate-900 hover:bg-slate-700 justify-center">Login</button>
 {/*     
                 <div className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded">
                     Error message
