@@ -30,10 +30,11 @@ const LoginForm = () => {
 
 
     } catch (error) {
-      console.log(error);
+      toast.error("No User Found");
+
     }
 
-    console.log(e.target.value);
+    // console.log(e.target.value);
   }
 
 
